@@ -5,6 +5,8 @@
  */
 package algoritmosecuencial;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aldair
@@ -17,7 +19,7 @@ public class Ejercicio11 extends javax.swing.JFrame {
     public Ejercicio11() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
+        txtPresu.requestFocusInWindow();
         
     }
 
@@ -32,6 +34,19 @@ public class Ejercicio11 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        txtPgine = new javax.swing.JTextField();
+        txtPtrau = new javax.swing.JTextField();
+        txtPpedi = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtPresu = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,6 +64,65 @@ public class Ejercicio11 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel2.setText("Ginecologia");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel3.setText("Traumatologia");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel4.setText("Pediatria");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, 20));
+
+        jLabel5.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel5.setText("Procesador De Datos");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel6.setText("% Presupuestal");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel7.setText("Area");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+
+        jButton2.setBackground(new java.awt.Color(102, 255, 102));
+        jButton2.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jButton2.setText("Borrar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, 80, -1));
+
+        jButton3.setBackground(new java.awt.Color(102, 255, 102));
+        jButton3.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jButton3.setText("Calcular");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, -1, -1));
+        jPanel1.add(txtPgine, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 250, 40));
+        jPanel1.add(txtPtrau, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 250, 40));
+        jPanel1.add(txtPpedi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 250, 40));
+
+        jLabel8.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel8.setText("Presupuesto");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
+
+        txtPresu.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPresuKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtPresu, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 220, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\aldair\\Desktop\\istock_000019699924small.jpg")); // NOI18N
         jLabel1.setText("jLabel1");
@@ -73,6 +147,54 @@ public class Ejercicio11 extends javax.swing.JFrame {
         System.exit(0);
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        
+        double pgine, ptrau, ppedi, pres, res;
+        
+        if(txtPresu.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null,"por favor ingrese el presupuesto del hospital","ERROR",JOptionPane.WARNING_MESSAGE);
+        }else
+            
+        try{
+        pres=Double.parseDouble(txtPresu.getText());
+        
+        res=pres;
+        
+        pgine=res*0.40;
+        ptrau=res*0.30;
+        ppedi=res*0.30;
+        
+        txtPresu.setText(""+res);
+        txtPgine.setText(""+pgine);
+        txtPtrau.setText(""+ptrau);
+        txtPpedi.setText(""+ppedi);
+        
+        txtPresu.requestFocusInWindow();
+        }
+        catch(Exception e){
+         JOptionPane.showMessageDialog(null,"el valor ingresado en el presupuesto es erroneo","ERROR",JOptionPane.ERROR_MESSAGE);        
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         txtPresu.setText("");
+        txtPgine.setText("");
+        txtPtrau.setText("");
+        txtPpedi.setText("");
+        
+        txtPresu.requestFocusInWindow();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtPresuKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPresuKeyTyped
+        char c=evt.getKeyChar();
+        
+        if(!Character.isDigit(evt.getKeyChar())&& evt.getKeyChar() != '.'){
+            getToolkit();
+            
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtPresuKeyTyped
 
     /**
      * @param args the command line arguments
@@ -111,7 +233,20 @@ public class Ejercicio11 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtPgine;
+    private javax.swing.JTextField txtPpedi;
+    private javax.swing.JTextField txtPresu;
+    private javax.swing.JTextField txtPtrau;
     // End of variables declaration//GEN-END:variables
 }
