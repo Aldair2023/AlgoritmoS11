@@ -109,8 +109,14 @@ public class Ejercicio11 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, -1, -1));
+
+        txtPgine.setEditable(false);
         jPanel1.add(txtPgine, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 250, 40));
+
+        txtPtrau.setEditable(false);
         jPanel1.add(txtPtrau, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 250, 40));
+
+        txtPpedi.setEditable(false);
         jPanel1.add(txtPpedi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 250, 40));
 
         jLabel8.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
@@ -172,7 +178,7 @@ public class Ejercicio11 extends javax.swing.JFrame {
         
         txtPresu.requestFocusInWindow();
         }
-        catch(Exception e){
+        catch(Exception q){
          JOptionPane.showMessageDialog(null,"el valor ingresado en el presupuesto es erroneo","ERROR",JOptionPane.ERROR_MESSAGE);        
         }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -187,8 +193,6 @@ public class Ejercicio11 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txtPresuKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPresuKeyTyped
-        char c=evt.getKeyChar();
-        
         if(!Character.isDigit(evt.getKeyChar())&& evt.getKeyChar() != '.'){
             getToolkit();
             
